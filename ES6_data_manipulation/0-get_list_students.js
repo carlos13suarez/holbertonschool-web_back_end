@@ -2,7 +2,7 @@ const getListStudents = () => [
   {
     id: 1,
     firstName: 'Guillaume',
-    location: 'Francisco',
+    location: 'San Francisco',
   },
   {
     id: 2,
@@ -10,7 +10,7 @@ const getListStudents = () => [
     location: 'Columbia',
   },
   {
-    id: 3,
+    id: 5,
     firstName: 'Serena',
     location: 'San Francisco',
   },
