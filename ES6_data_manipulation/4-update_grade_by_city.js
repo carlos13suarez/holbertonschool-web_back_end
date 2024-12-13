@@ -3,7 +3,7 @@ const updateStudentGradeByCity = (getListStudents, city, newGrades) => getListSt
 	.map(student => {
 		const studentGrade = {
 			...student,
-			grade: newGrades.filter(grade => grade.studentId === student.id).at(0) ?? "N/A"
+			grade: newGrades.filter(grade => grade.studentId === student.id).at(0)?.grade ?? "N/A"
 		}
 		return studentGrade;
 	})
