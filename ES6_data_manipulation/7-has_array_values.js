@@ -1,3 +1,3 @@
-const hasValuesFromArray = (set, array) => array.map((item) => set.has(item)).every((item) => item === true);
+const hasValuesFromArray = (set, array) => array.every((value) => set.has(value));
 
 export default hasValuesFromArray;
