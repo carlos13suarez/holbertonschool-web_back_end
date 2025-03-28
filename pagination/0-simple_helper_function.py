@@ -1,17 +1,28 @@
-#!usr/bin/env/python3
-"""Module for simple helper function"""
+#!/usr/bin/env python3
+"""
+This module provides a function to calculate
+the start and end indexes for paginating a dataset.
+"""
 
 from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
-    Return a tuple of size two containing a start index and an end index
-    corresponding to the range of indexes to return in a list for
-    those particular pagination parameters
+    This function calculates the start and end indexes
+    for paginating a dataset.
+
+    Args:
+        page (int): The current page number (1-based index).
+        page_size (int): The number of items per page.
+
+    Returns:
+        tuple: A tuple containing the start index and end index
+        for slicing the dataset.
     """
-    start_index = (page - 1) * page_size
-    end_index = page * page_size
-    index_tuple = (start_index, end_index)
+    start = (page - 1) * page_size
+    end = page * page_size
+
+    index_tuple = (start, end)
 
     return index_tuple
