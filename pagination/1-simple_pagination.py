@@ -1,5 +1,5 @@
 #!/usr/bin/env/python3
-"""Module for simple pagination"""
+"""Module for simple pagination for handling a dataset of popular baby names"""
 
 import csv
 import math
@@ -49,6 +49,7 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         This function returns a specific page of data from the dataset.
+
         Args:
             page (int): The current page number (1-based index).
             page_size (int): The number of items per page.
@@ -56,8 +57,18 @@ class Server:
         Returns:
             list: A list of lists containing the data for the specified page.
         """
+
+        data = self.dataset()
+
         assert isinstance(page, int) and isinstance(page_size, int)
         assert page > 0 and page_size > 0
 
-        start, end = index_range(page, page_size)
-        return self.dataset()[start:end]
+        index_to_paginate = index_range(page, page_size)
+
+        if index_to_paginate[0] >= len(data):
+            return []
+
+        start = index_to_paginate[0]
+        end = index_to_paginate[1]
+
+        return list(data[start:end])
