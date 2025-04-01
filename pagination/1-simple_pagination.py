@@ -71,4 +71,4 @@ class Server:
         start = index_to_paginate[0]
         end = index_to_paginate[1]
 
-        return data[start:end]
+        return List[List](data[start:end])
