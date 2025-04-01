@@ -58,17 +58,8 @@ class Server:
             list: A list of lists containing the data for the specified page.
         """
 
-        data = self.dataset()
+        assert isinstance(page, int) and isinstance(page_size, int) and page > 0 and page_size > 0
 
-        assert isinstance(page, int) and isinstance(page_size, int)
-        assert page > 0 and page_size > 0
+        start, end = index_range(page, page_size)
 
-        index_to_paginate = index_range(page, page_size)
-
-        if index_to_paginate[0] >= len(data):
-            return []
-
-        start = index_to_paginate[0]
-        end = index_to_paginate[1]
-
-        return list(data[start:end])
+        return self.dataset()[start:end]
