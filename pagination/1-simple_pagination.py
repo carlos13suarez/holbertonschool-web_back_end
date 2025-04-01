@@ -1,4 +1,4 @@
-#!/usr/bin/env/python3
+#!/usr/bin/env python3
 """Module for simple pagination for handling a dataset of popular baby names"""
 
 import csv
