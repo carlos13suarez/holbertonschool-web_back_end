@@ -63,6 +63,9 @@ class Server:
 
         index_to_paginate = index_range(page, page_size)
 
+        if index_to_paginate[0] >= len(self.dataset()):
+            return []
+
         start = index_to_paginate[0]
         end = index_to_paginate[1]
 
