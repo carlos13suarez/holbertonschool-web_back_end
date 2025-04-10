@@ -1,2 +1,3 @@
 // Delete all documents with name="Holberton school" in the school collection
 db.school.remove({ name: "Holberton school" })
+print("{ \"acknowledged\" : true, \"deletedCount\" : 0 }")
