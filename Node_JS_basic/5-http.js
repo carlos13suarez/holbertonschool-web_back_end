@@ -1,4 +1,5 @@
 const http = require('http');
+const fs = require('fs');
 const countStudents = require('./3-read_file_async');
 
 const databaseFile = process.argv[2];
@@ -13,7 +14,6 @@ const app = http.createServer((req, res) => {
       .then(() => {
         // countStudents already logs to console
         // We need to reconstruct it to respond to HTTP
-        const fs = require('fs');
         fs.readFile(databaseFile, 'utf8', (err, data) => {
           if (err) {
             res.end('Cannot load the database');
