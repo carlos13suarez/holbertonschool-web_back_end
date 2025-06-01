@@ -1,0 +1,6 @@
+*main*
+babel.config.js
+database.csv
+node_modules/
+package-lock.json
+package.json
