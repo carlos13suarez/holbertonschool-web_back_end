@@ -1,11 +1,9 @@
-// 7-http_express.js
-
 const express = require('express');
 const countStudents = require('./3-read_file_async');
 
 const app = express();
 const port = 1245;
-const database = process.argv[2]; // Get database path from command line
+const database = process.argv[2];
 
 app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
@@ -14,7 +12,6 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   let responseText = 'This is the list of our students';
-
   try {
     const studentStats = await countStudents(database);
     responseText += `\n${studentStats}`;
